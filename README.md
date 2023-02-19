@@ -1,0 +1,26 @@
+# Sorcerer v1
+
+The aim of this project is to create an interface for [ChatGPT](https://openai.com/blog/chatgpt/) that allows users to input text sources and prompt a [GPT-3](https://platform.openai.com/docs/models/gpt-3) model to perform [text completions](https://platform.openai.com/docs/guides/completion) with citations. 
+
+Simply put, Sorcerer leverages GPT-3's ability to interpret prompts and analyze text as a means of retrieving information from user-defined sources. Let's put a state-of-the-art language model to the test against the familiar mechanisms of search engines, tags, human curation, and good ol' `Ctrl`+`F`. 
+
+## Finding the right model
+[This](https://platform.openai.com/docs/models/finding-the-right-model) discussion in the OpenAI API docs provides a good starting point to consider which text completion model to use. Davinci is the most capable model and supports nearly twice the amount of request tokens (this is its greatest advantage for this application), but Curie offers a similar performance at a significant speed and cost advantage. 
+
+> While Davinci is more capable when it comes to comprehending text and generating responses that are more nuanced like summarizing for a child or emulating human speaking patterns, Curie is highly capable of analyzing text, answering direct questions, and providing key points.
+
+Because the general use case for Sorcerer is more analytical than creative, I have paid close attention to two recommendations put forth by OpenAI:
+
+> 1. Use a low temperature when extracting data
+
+> 2. Use one API call to answer multiple questions
+
+The documentation also offers the[GPT Comparison Tool](https://gpttools.com/comparisontool) to compare various settings (engines, temp, top p, etc.) on a browser. _Note: Your API key is needed to use this tool._
+
+
+## Outlook
+* Because it is possible for a model to insert or change text even when asked for direct quotations, there will have to be a validation mechanism to prevent the user experience from devolving into a [telephone game](https://en.wikipedia.org/wiki/Chinese_whispers) with a neural network. Putting such a check in place will allow me to generate useful data about model configuration and performance.
+
+* There is a limit to how many tokens (4,000 tokens for `text-davinci-003` and 2,048 tokens for `text-curie-001`) can be processed by the availble models. A potential workaround for this would be to train a custom model with user input (see below) or to make multiple API calls behind the scenes. 
+
+* It may be worthwhile to [fine-tune](https://platform.openai.com/docs/guides/fine-tuning) a model for Sorcerer as it may yield higher quality results than "few-shot learning." Custom models would incur higher usage costs as well as the training expenses (which depends on the number of tokens in the training dataset as well as the number of training epochs). How this might be implemented will need to be assessed with regard to the efficacy afforded by the present and future iterations of base models. 
