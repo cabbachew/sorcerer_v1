@@ -1,0 +1,12 @@
+<div class="source">
+  <%= link_to source.name, source_path(source) %>
+  <div class="source__actions">
+    <%= button_to "Delete",
+                  source_path(source),
+                  method: :delete,
+                  class: "btn btn--light" %>
+    <%= link_to "Edit",
+                edit_source_path(source),
+                class: "btn btn--light" %>
+  </div>
+</div>

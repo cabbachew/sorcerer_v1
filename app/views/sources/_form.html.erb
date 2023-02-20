@@ -1,0 +1,10 @@
+<%= simple_form_for source, html: { class: "source form" } do |f| %>
+  <% if source.errors.any? %>
+    <div class="error-message">
+      <%= source.errors.full_messages.to_sentence.capitalize %>
+    </div>
+  <% end %>
+
+  <%= f.input :name, input_html: { autofocus: true } %>
+  <%= f.submit class: "btn btn--secondary" %>
+<% end %>

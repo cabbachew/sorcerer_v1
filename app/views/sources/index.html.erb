@@ -1,0 +1,10 @@
+<main class="container">
+  <div class="header">
+    <h1>Sources</h1>
+    <%= link_to "New source",
+                new_source_path,
+                class: "btn btn--primary" %>
+  </div>
+
+  <%= render @sources %>
+</main>
