@@ -17,7 +17,6 @@ Because the general use case for Sorcerer is more analytical than creative, I ha
 
 The documentation also offers the[GPT Comparison Tool](https://gpttools.com/comparisontool) to compare various settings (engines, temp, top p, etc.) on a browser. _Note: Your API key is needed to use this tool._
 
-
 ## Outlook
 * Because it is possible for a model to insert or change text even when asked for direct quotations, there will have to be a validation mechanism to prevent the user experience from devolving into a [telephone game](https://en.wikipedia.org/wiki/Chinese_whispers) with a neural network. Putting such a check in place will allow me to generate useful data about model configuration and performance.
 
