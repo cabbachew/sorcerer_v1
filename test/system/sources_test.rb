@@ -9,7 +9,7 @@ class SourcesTest < ApplicationSystemTestCase
     visit sources_path
     assert_selector "h1", text: "Sources"
 
-    click_on "New Source"
+    click_on "New source"
     assert_selector "h1", text: "New source"
 
     fill_in "Name", with: "Test source"
