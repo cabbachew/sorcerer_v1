@@ -35,7 +35,11 @@ class SourcesController < ApplicationController
 
   def destroy
     @source.destroy
-    redirect_to sources_path, notice: 'Source was successfully destroyed.'
+    
+    respond_to do |format|
+      format.html { redirect_to sources_path, notice: 'Source was successfully destroyed.' }
+      format.turbo_stream
+    end
   end
 
   private
