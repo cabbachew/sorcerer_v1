@@ -5,5 +5,7 @@
     <h1>Edit source</h1>
   </div>
 
-  <%= render "form", source: @source %>
+  <%= turbo_frame_tag "source_#{@source.id}" do %>
+    <%= render "form", source: @source %>
+  <% end %>
 </main>
