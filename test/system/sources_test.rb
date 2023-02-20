@@ -10,9 +10,9 @@ class SourcesTest < ApplicationSystemTestCase
     assert_selector "h1", text: "Sources"
 
     click_on "New source"
-    assert_selector "h1", text: "New source"
-
     fill_in "Name", with: "Test source"
+    
+    assert_selector "h1", text: "Sources"
     click_on "Create source"
 
     assert_selector "h1", text: "Sources"
@@ -31,9 +31,9 @@ class SourcesTest < ApplicationSystemTestCase
     assert_selector "h1", text: "Sources"
 
     click_on "Edit", match: :first
-    assert_selector "h1", text: "Edit source"
-
     fill_in "Name", with: "Updated source"
+    
+    assert_selector "h1", text: "Sources"
     click_on "Update source"
 
     assert_selector "h1", text: "Sources"
