@@ -1,6 +1,8 @@
 <%= turbo_frame_tag "source_#{source.id}" do %>
   <div class="source">
-    <%= link_to source.name, source_path(source) %>
+    <%= link_to source.name,
+                source_path(source),
+                data: { turbo_frame: "_top" } %>
     <div class="source__actions">
       <%= button_to "Delete",
                     source_path(source),
