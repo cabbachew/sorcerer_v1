@@ -3,8 +3,12 @@
     <h1>Sources</h1>
     <%= link_to "New source",
                 new_source_path,
-                class: "btn btn--primary" %>
+                class: "btn btn--primary",
+                data: { turbo_frame: dom_id(Source.new) } %>
   </div>
 
-  <%= render @sources %>
+  <%= turbo_frame_tag Source.new %>
+  <%= turbo_frame_tag "sources" do %>
+    <%= render @sources %>
+  <% end %>
 </main>

@@ -16,7 +16,10 @@ class SourcesController < ApplicationController
     @source = Source.new(source_params)
 
     if @source.save
-      redirect_to sources_path, notice: 'Source was successfully created.'
+      respond_to do |format|
+        format.html { redirect_to sources_path, notice: 'Source was successfully created.' }
+        format.turbo_stream
+      end
     else
       render :new, status: :unprocessable_entity
     end

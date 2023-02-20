@@ -1,0 +1,4 @@
+<%= turbo_stream.prepend "sources" do %>
+  <%= render partial: "sources/source", locals: { source: @source } %>
+<% end %>
+<%= turbo_stream.update Source.new, "" %>
