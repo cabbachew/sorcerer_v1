@@ -2,7 +2,7 @@ require "application_system_test_case"
 
 class SourcesTest < ApplicationSystemTestCase
   setup do
-    @source = sources(:first)
+    @source = Source.ordered.first
   end
 
   test "Creating a new source" do
