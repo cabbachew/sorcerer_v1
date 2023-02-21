@@ -1,4 +1,6 @@
 class Source < ApplicationRecord
+  belongs_to :team
+
   validates :name, presence: true
 
   # Sort by id in descending order

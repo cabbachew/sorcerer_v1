@@ -1,10 +1,14 @@
 instructor:
+  team: nu
   email: instructor@northwestern.edu
   encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
 
 intern:
+  team: nu
   email: intern@northwestern.edu
   encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
 
 researcher:
+  team: um
   email: researcher@umich.edu
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>

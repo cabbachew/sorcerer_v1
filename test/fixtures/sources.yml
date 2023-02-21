@@ -1,8 +1,11 @@
 first:
+  team: nu
   name: First source
 
 second:
+  team: nu
   name: Second source
 
 third:
+  team: nu
   name: Third source
