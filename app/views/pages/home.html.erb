@@ -5,7 +5,7 @@
   <% if user_signed_in? %>
     <%= link_to "View quotes", sources_path, class: "btn btn--dark" %>
     
-    <div data-controller="form">
+    <div data-controller="message">
       <div  id="message-display" 
             style="margin-top:15px;
                   height:50vh;
@@ -15,19 +15,19 @@
                   box-shadow: var(--shadow-small);
                   margin-bottom: var(--space-m);
                   padding: var(--space-xs)"
-            data-form-target="display">
+            data-message-target="display">
       </div>
       <div class="message-form">
         <form action="" 
               id="form" 
               class="source"
-              data-action="submit->form#sendMessage submit->form#clearInput">
+              data-action="submit->message#sendMessage submit->message#clearInput">
           <div class="form__group">
             <input  type="text" 
                     id="message-input"
                     placeholder="Type a message"
                     class="form__input"
-                    data-form-target="input">
+                    data-message-target="input">
           </div>
           <input  type="submit" 
                   value="Send" 

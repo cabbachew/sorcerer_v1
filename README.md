@@ -9,7 +9,7 @@ password: password
 
 ### Current features
 - [x] User authentication
-- [x] Real-time messaging via Action Cable (WebSockets) on home page after login. Currently, messages are not persisted to a database.
+- [x] Real-time messaging via Action Cable (WebSockets) on home page after login. Currently, messages are not persisted to a database. _Note: This feature is not reliable in deployment. After logging messages to the console, it appears that the client-side `message_channel.js` is not connecting as expected. I suspect it might be a problem with redis and how it is configured in production._
 
 ### Planned improvements
 - [ ] Add data persistence toggle to real-time messages
