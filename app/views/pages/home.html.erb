@@ -1,0 +1,10 @@
+<main class="container">
+  <h1>Sorcerer</h1>
+  <p>Ask and you <em>might</em> receive</p>
+
+  <% if user_signed_in? %>
+    <%= link_to "View quotes", sources_path, class: "btn btn--dark" %>
+  <% else %>
+    <%= link_to "Sign in", new_user_session_path, class: "btn btn--dark" %>
+  <% end %>
+</main>
