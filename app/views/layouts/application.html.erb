@@ -8,6 +8,11 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+
+    <% if controller_name == "pages" && action_name == "home" %>
+       <meta name="turbo-visit-control" content="reload">
+    <% end %>
+
   </head>
 
   <body>
