@@ -1,5 +1,25 @@
 # Sorcerer v1
 
+## Live demo (last deployed: 2023-02-20)
+Click [here](https://sorcerer-v1.fly.dev/) to see Sorcerer in development. Because the application is not ready for production, sign up is not yet available (you will get a validation error because every user must belong to a team). Instead you can log in with the following credentials:
+```
+email: instructor@northwestern.edu
+password: password
+```
+
+### Current features
+- [x] User authentication
+
+### Planned improvements
+
+- [ ] Live search for sources and quotations
+- [ ] Pagination for sources and quotations
+- [ ] Apply design system to Devise views
+- [ ] Implement team and user registration
+- [ ] Add navbar brand and favicon
+ 
+## About
+
 The aim of this project is to create an interface for [ChatGPT](https://openai.com/blog/chatgpt/) that allows users to input text sources and prompt a [GPT-3](https://platform.openai.com/docs/models/gpt-3) model to perform [text completions](https://platform.openai.com/docs/guides/completion) with citations. 
 
 Simply put, Sorcerer leverages GPT-3's ability to interpret prompts and analyze text as a means of retrieving information from user-defined sources. Let's put a state-of-the-art language model to the test against the familiar mechanisms of search engines, tags, human curation, and good ol' `Ctrl`+`F`. 

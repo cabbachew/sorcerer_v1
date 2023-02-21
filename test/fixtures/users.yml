@@ -12,3 +12,8 @@ researcher:
   team: um
   email: researcher@umich.edu
   encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+
+mentor:
+  team: nu
+  email: connect@airbnb.com
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
