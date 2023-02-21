@@ -16,7 +16,6 @@ const messageChannel = consumer.subscriptions.create("MessageChannel", {
 
     // Scroll to the last message
     messageDisplay.scrollTop = messageDisplay.scrollHeight;
-    document.querySelector('#message-input').value = ''
   },
 
   template(data) {
@@ -40,6 +39,7 @@ const messageChannel = consumer.subscriptions.create("MessageChannel", {
   }
 });
 
+// Scroll to the last message when the page loads
 window.addEventListener("load", function() {
   var messageDisplay = document.getElementById("message-display");
   messageDisplay.scrollTop = messageDisplay.scrollHeight;
@@ -56,6 +56,7 @@ document.addEventListener("turbo:load", () => {
         body: messageInput
       }
       messageChannel.send({message: message})
+      // Clear the input
       document.querySelector('#message-input').value = ''
     })
   }

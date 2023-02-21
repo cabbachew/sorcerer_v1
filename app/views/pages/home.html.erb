@@ -18,7 +18,11 @@
       <div class="message-form">
         <form action="" id="form" class="source">
           <div class="form__group">
-            <input type="text" id="message-input" placeholder="Type a message" class="form__input">
+            <input  type="text" 
+                    id="message-input"
+                    data-current-email="<%= current_user.email %>"
+                    placeholder="Type a message"
+                    class="form__input">
           </div>
           <input type="submit" value="Send" class="btn btn--secondary">
         </form>
