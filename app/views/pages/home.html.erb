@@ -5,26 +5,33 @@
   <% if user_signed_in? %>
     <%= link_to "View quotes", sources_path, class: "btn btn--dark" %>
     
-    <div>
-      <div id="message-display" style="margin-top:15px;
-                                      height:50vh;
-                                      overflow:auto;
-                                      background-color: var(--color-white);
-                                      border-radius: var(--border-radius);
-                                      box-shadow: var(--shadow-small);
-                                      margin-bottom: var(--space-m);
-                                      padding: var(--space-xs)">
+    <div data-controller="form">
+      <div  id="message-display" 
+            style="margin-top:15px;
+                  height:50vh;
+                  overflow:auto;
+                  background-color: var(--color-white);
+                  border-radius: var(--border-radius);
+                  box-shadow: var(--shadow-small);
+                  margin-bottom: var(--space-m);
+                  padding: var(--space-xs)"
+            data-form-target="display">
       </div>
       <div class="message-form">
-        <form action="" id="form" class="source">
+        <form action="" 
+              id="form" 
+              class="source"
+              data-action="submit-> form#sendMessage submit->form#clearInput">
           <div class="form__group">
             <input  type="text" 
                     id="message-input"
-                    data-current-email="<%= current_user.email %>"
                     placeholder="Type a message"
-                    class="form__input">
+                    class="form__input"
+                    data-form-target="input">
           </div>
-          <input type="submit" value="Send" class="btn btn--secondary">
+          <input  type="submit" 
+                  value="Send" 
+                  class="btn btn--secondary">
         </form>
     </div>
 

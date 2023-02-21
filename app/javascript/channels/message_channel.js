@@ -39,25 +39,4 @@ const messageChannel = consumer.subscriptions.create("MessageChannel", {
   }
 });
 
-// Scroll to the last message when the page loads
-window.addEventListener("load", function() {
-  var messageDisplay = document.getElementById("message-display");
-  messageDisplay.scrollTop = messageDisplay.scrollHeight;
-});
-
-document.addEventListener("turbo:load", () => {
-  let form = document.querySelector('.message-form')
-  if(form) {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault()
-      let messageInput = document.querySelector('#message-input').value
-      if(messageInput == '') return;
-      const message = {
-        body: messageInput
-      }
-      messageChannel.send({message: message})
-      // Clear the input
-      document.querySelector('#message-input').value = ''
-    })
-  }
-})
+export default messageChannel
