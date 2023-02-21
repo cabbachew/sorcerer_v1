@@ -3,6 +3,7 @@ import consumer from "./consumer"
 const messageChannel = consumer.subscriptions.create("MessageChannel", {
   connected() {
     // Called when the subscription is ready for use on the server
+    console.log("Connected to message channel")
   },
 
   disconnected() {
@@ -10,6 +11,7 @@ const messageChannel = consumer.subscriptions.create("MessageChannel", {
   },
 
   received(data) {
+    console.log("Received broadcast from server")
     // Called when there's incoming data on the websocket for this channel
     const messageDisplay = document.querySelector('#message-display')
     messageDisplay.insertAdjacentHTML('beforeend', this.template(data))

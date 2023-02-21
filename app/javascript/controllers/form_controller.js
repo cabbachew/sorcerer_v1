@@ -6,6 +6,7 @@ export default class extends Controller {
   static targets = [ "input", "display" ]
 
   connect() {
+    console.log("Hello from Stimulus")
   }
 
   clearInput() {
