@@ -9,7 +9,7 @@ password: password
 
 ### Current features
 - [x] User authentication
-- [x] Real-time messaging via Action Cable (WebSockets) on home page after login. Currently, messages are not persisted to a database. 
+- [x] Real-time messaging via Action Cable (WebSockets) on home page after login. Currently, messages are not persisted to a database. _Note: A refresh may be necessary for messages to appear. I am working on a fix for this._
 
 ### Planned improvements
 - [ ] Add data persistence toggle to real-time messages
