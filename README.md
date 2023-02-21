@@ -9,11 +9,13 @@ password: password
 
 ### Current features
 - [x] User authentication
+- [x] Real-time messaging via Action Cable (WebSockets) on home page after login. Currently, messages are not persisted to a database. 
 
 ### Planned improvements
-
+- [ ] Add data persistence toggle to real-time messages
 - [ ] Live search for sources and quotations
 - [ ] Pagination for sources and quotations
+- [ ] Refactor inline styles into proper CSS classes.
 - [ ] Apply design system to Devise views
 - [ ] Implement team and user registration
 - [ ] Add navbar brand and favicon
