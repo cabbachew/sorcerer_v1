@@ -17,3 +17,18 @@ mentor:
   team: nu
   email: connect@airbnb.com
   encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+
+daniel:
+  team: nu
+  email: daniel@oh.com
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+
+seungdo:
+  team: nu
+  email: seungdo@reiner.com
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+
+john:
+  team: nu
+  email: john@jeong.com
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
