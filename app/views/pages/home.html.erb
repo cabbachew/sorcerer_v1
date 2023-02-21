@@ -4,6 +4,26 @@
 
   <% if user_signed_in? %>
     <%= link_to "View quotes", sources_path, class: "btn btn--dark" %>
+    
+    <div>
+      <div id="message-display" style="margin-top:15px;
+                                      height:50vh;
+                                      overflow:auto;
+                                      background-color: var(--color-white);
+                                      border-radius: var(--border-radius);
+                                      box-shadow: var(--shadow-small);
+                                      margin-bottom: var(--space-m);
+                                      padding: var(--space-xs)">
+      </div>
+      <div class="message-form">
+        <form action="" id="form" class="source">
+          <div class="form__group">
+            <input type="text" id="message-input" placeholder="Type a message" class="form__input">
+          </div>
+          <input type="submit" value="Send" class="btn btn--secondary">
+        </form>
+    </div>
+
   <% else %>
     <%= link_to "Sign in", new_user_session_path, class: "btn btn--dark" %>
   <% end %>
