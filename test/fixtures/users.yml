@@ -1,7 +1,10 @@
-one:
-  email: connect@airbnb.com
+instructor:
+  email: instructor@northwestern.edu
   encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
 
-two:
-  email: example@email.com
+intern:
+  email: intern@northwestern.edu
   encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+
+researcher:
+  email: researcher@umich.edu
