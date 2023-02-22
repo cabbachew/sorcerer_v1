@@ -4,10 +4,15 @@ const messageChannel = consumer.subscriptions.create("MessageChannel", {
   connected() {
     // Called when the subscription is ready for use on the server
     console.log("Connected to message channel")
+    const offlineMessage = document.querySelector('#offline-message')
+    if(offlineMessage) offlineMessage.innerHTML = ""
   },
 
   disconnected() {
     // Called when the subscription has been terminated by the server
+    console.log("Disconnected from message channel")
+    const messageDisplay = document.querySelector('#message-display')
+    messageDisplay.insertAdjacentHTML('beforeend', "<div id='offline-message'>Action Cable channel is currently offline. Please check the browser console for connection status.<div>")
   },
 
   received(data) {

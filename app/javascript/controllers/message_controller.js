@@ -7,6 +7,7 @@ export default class extends Controller {
 
   connect() {
     console.log("Hello from the Message Controller")
+    this.displayTarget.insertAdjacentHTML('beforeend', "<div id='offline-message'>Action Cable channel is currently offline. Please check the browser console for connection status.<div>")
   }
 
   clearInput() {
@@ -20,6 +21,7 @@ export default class extends Controller {
     const message = {
       body: messageInput
     }
+    console.log("Sending message to server")
     messageChannel.send({message: message})
   }
 }
