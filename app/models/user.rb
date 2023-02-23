@@ -5,4 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   belongs_to :team
+
+  def name
+    self.email.split('@').first.capitalize
+  end
 end

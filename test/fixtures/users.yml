@@ -23,6 +23,11 @@ daniel:
   email: daniel@oh.com
   encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
 
+mark:
+  team: nu
+  email: mark@janzer.com
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+
 seungdo:
   team: nu
   email: seungdo@reiner.com

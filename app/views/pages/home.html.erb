@@ -1,10 +1,9 @@
-<main class="container">
-  <h1>Sorcerer</h1>
-  <p>Focus on gathering knowledge. Let Sorcerer help you use it.</p>
-
+<main class="container"> 
   <% if user_signed_in? %>
-    <%= link_to "View quotes", sources_path, class: "btn btn--dark" %>
-    
+    <div style="display:flex; align-items:center; justify-content:space-between">
+      <h1 style="color:var(--color-primary)">welcome</h1>
+      <%= link_to "view your sources", sources_path, class: "btn btn--primary" %>
+    </div>
     <div data-controller="message">
       <div  id="message-display" 
             style="margin-top:15px;
@@ -36,6 +35,9 @@
     </div>
 
   <% else %>
-    <%= link_to "Sign in", new_user_session_path, class: "btn btn--dark" %>
+    <div style="display:flex;flex-direction:column">
+      <h1 style="margin-inline:auto; color:var(--color-secondary">You have a lot of knowledge.</h1>
+      <h1 style="margin-inline:auto; margin-top:20px; color:var(--color-secondary-rotate">Let <%= link_to "Sorcerer", new_user_session_path, style: "color:var(--color-primary); text-decoration:underline" %> help you use it.</h1>
+    </div>
   <% end %>
 </main>

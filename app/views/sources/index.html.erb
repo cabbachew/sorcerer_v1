@@ -1,6 +1,7 @@
 <%= turbo_stream_from "sources" %>
 
 <main class="container">
+  <%= link_to sanitize("&larr; Back to home"), root_path %>
   <div class="header">
     <h1>Sources</h1>
     <%= link_to "New source",
